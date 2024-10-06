@@ -1,0 +1,46 @@
+{% extends 'base1.html'%}
+{% load humanize %}
+
+{% block content %}
+<!-- mainHeader end -->
+    <div class="invoiceWrap">
+        <div class="invoiceWrap__content">
+            <h3 class="text-center">Student Login</h3>
+            <div class="invoiceWrap__content__card">
+
+                <form  method="POST" id="teacher-registration" enctype="multipart/form-data" >
+                    {% csrf_token %}
+                    <div class="cardboard basicInfoCard">
+                        <div class="invoiceWrap__content__card">
+                            <!-- <input type="hidden" name="ids" id='ids' value="{{ids}}"> -->
+                            <!-- <input type="hidden" name="id" id='id' value="{{data.id}}">     -->
+                            <div class="p-4 pb-0">
+                                {{ form.as_p }}
+                            </div>
+                        </div>
+                                
+                            <br>
+                            
+                            <div class="mb-4 text-center">
+                                
+                                <button type="submit" id="teacher-submit" class="btn btn-secondary btn-w-25">SUBMIT</button>
+                            </div>
+                    </div>
+                </div>
+                </form>
+                {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+  
+</body>
+</html>
+{% endblock %}
+

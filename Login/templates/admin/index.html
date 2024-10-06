@@ -1,0 +1,14 @@
+{% extends "admin/index.html" %}
+
+{% block content %}
+<h1 style="color: red;">Custom Admin Dashboard Loaded</h1>
+    {{ block.super }}
+
+    <!-- Add your custom button here -->
+    <div style="margin-top: 20px;">
+        <a href="{% url 'custom_admin_user_form' %}" class="button">Add Admin User</a>
+        <!-- <a href="/admin/custom-admin-user-form/" class="button">Add Admin User</a> -->
+        <a href="#">Test Button</a>
+        
+    </div>
+{% endblock %}

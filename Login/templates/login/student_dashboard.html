@@ -1,0 +1,37 @@
+{% extends 'base4.html'%}
+{% load humanize %}
+
+{% block content %}
+<div class="invoiceWrap">
+    <div class="invoiceWrap__content">
+        <h3 class="text-center">Student Dashboard</h3>
+        <div class="text-right mb-10" id="back" >
+            <a href="/" class="btn btn-success">Home</a>
+            
+        </div>
+        <div class="invoiceWrap__content__card">
+
+            <h1>Welcome {{student_user}} ,to the student Dashboard!</h1>
+            <br>
+            <h2>Your Assigned Teachers</h2>
+
+            {% if assigned_teachers %}
+                <ul>
+                    {% for teacher in assigned_teachers %}
+                        <b><li>{{ teacher.name }} ({{ teacher.subject }})</li></b>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>You have no assigned teachers at the moment.</p>
+            {% endif %}
+
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+    
+
+{% endblock %}
